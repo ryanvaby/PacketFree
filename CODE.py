@@ -1,1 +1,19 @@
-print("hi")
+from scapy.all import *
+
+capture = sniff(filter="tcp", count=10)
+index = 0
+
+for pkt in capture:
+    tsdata = dict(pkt['TCP'].options)
+    print(tsdata["Timestamp"])
+
+
+# DO SNIFFING STUFF HERE IN CODE.PY
+# RUN THIS FILE WHILE IN SUDO MODE
+# USE A SHELL SCRIPT TO BE ABLE TO DO THIS
+# OBTAIN PACKET ROUND TRIP TIMES TO VARIOUS DESTINATIONS OR LIVE TRAFFIC
+# DETERMINE WHICH DESTINATIONS TAKE THE LONGEST TIME TO RETURN
+# GRAPH THE DATA
+
+# LOOK INTO TQDM
+# LOOK INTO MATPLOTLIB
