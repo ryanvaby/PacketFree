@@ -29,17 +29,16 @@ def measure_response_time(target_ip, target_port):
         return None
 
 # Test the function
-rtt = measure_response_time('google.com', 80) * 1000
-if rtt is not None:
-    print(f'The round-trip time is {rtt} ms (milliseconds).')
-else:
-    print('No SYN-ACK response received.')
 
+USdomains = ["google.com", "microsoft.com", "nike.com", "timberland.com", "adidas.com", "amazon.com", "apple.com", "asics.com", "underarmour.com", "gap.com", "bing.com", "linkedin.com"]
+USRTT = dict()
+for domain in USdomains:
+    rtt = measure_response_time(domain, 80) * 1000
+    USRTT.update({domain : rtt})
+    if rtt is not None:
+        print(f'The round-trip time is {rtt} ms (milliseconds).')
+    else:
+        print('No SYN-ACK response received.')
 
-# capture = tqdm(sniff(filter="tcp", count=10))
-# index = 0
-
-# for pkt in capture:
-#     tsdata = dict(pkt['TCP'].options)
-#     print(tsdata["Timestamp"][0])
-
+s = sorted(USRTT.items(), key=lambda item : item[1])
+print(s)
