@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <h1>
+        This is PacketFree, our easy to use pseudo packet sniffer. By sending several "SYN-ACK" packets, which are essentially what a computer uses to connect to another server, we are able to discern the round trip time of a packet to that server. This information is useful for determing network congestion, and determining how well your web server can handle network traffic! To begin, please enter either "My own," if you'd like to test your own web domains, or "Yours," if you'd like to use our pre-loaded domains!
+    </h1>
+    <p>Choose whether you'd like to use your own domains or ours:</p>
+    <form>
+        <input type="radio" id="Yours" name="user" value="a">
+        <label for="Yours">Yours</label><br>
+            <p style="margin-left: 40px">
+            <input type="radio" id="US" name="area" value="a">
+            <label for="UD">US</label><br>
+            <input type="radio" id="International" name="area" value="b">
+            <label for="International">International</label><br>
+            </p>
+        <input type="radio" id="My own" name="user" value="b">
+        <label for="My own">Mine</label><br>
+        <h2 style="text-indent: 40px">Input your domains, each separated by a space (at least two domains). <input name="email"/></h2>
+        <button type="submit">Submit</button>
+    </form> 
+</html>
