@@ -15,10 +15,12 @@ app = Flask(__name__)
 # Declaring the following main_func() method as the code to run when user requests the home page of site
 @app.route("/", methods=["GET", "POST"])
 def main_func():
+    user = request.form["user"]
+    area = request.form["area"]
+    domains = request.form["domains"]
     if request.method == "POST":
-        response = (request.form["user"])
         # Determing whether the use wants to input their own domains or use the hard-coded ones
-        if response.lower() == "my own":
+        if user.lower() == "my own":
             print ("Sounds good! Enter at least two domains (ie. \"google.com\") then write \"STOP\" and hit enter!")
             
             # Blank list for the incoming domains
@@ -67,10 +69,7 @@ def main_func():
             return render_template("image_render.html", image=pngImageB64String)
 
         # Performing the same functions on pre-entered domains
-        if response.lower() == "yours":
-            if request.method == "POST":
-                print(request.form["user"])
-                return "hi"
+        if user.lower() == "yours":
             # Sample USA and International domains for the user to try
             USdomains = ["google.com", "microsoft.com", "nike.com", "timberland.com", "adidas.com", "amazon.com", "apple.com", "asics.com", "underarmour.com", "gap.com", "bing.com", "linkedin.com", "ditch.la", "youtube.com", "docs.google.com", "issaquah.instructure.com", "mail.google.com", "nfl.com", "bbc.com", "adobe.com", "espn.com", "scapy.net", "riotgames.com", "stackoverflow.com", "earth.google.com", "starbucks.com", "spotify.com"]
             NATIONALdomains = ["amazon.in", "nike.in", "amazon.co.uk", "google.co.uk", "adidas.co.uk", "apple.co.uk", "microsoft.co.uk", "gap.co.uk", "bing.co.uk", "linkedin.co.uk", "myntra.com", "amazon.au"]
@@ -79,9 +78,9 @@ def main_func():
             print("Would you like to test US or International domains? Respond with \"US\" or \"International\"")
             domains = []
             domainResponse = input().lower()
-            if domainResponse == "us":
+            if area.lower() == "us":
                 domains = USdomains
-            if domainResponse == "international":
+            if area.lower() == "international":
                 domains = NATIONALdomains
 
             # Running the measure_RTT function to store the average RTT of each domain
