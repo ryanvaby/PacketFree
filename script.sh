@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sudo python3 code.py
+sudo flask --app SERVE run -p 1111

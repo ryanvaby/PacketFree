@@ -80,7 +80,7 @@ if response.lower() == "yours":
     print("Would you like to test US or International domains?")
     RTT = dict()
     for domain in USdomains:
-        rtt = measure_response_time(domain, 80) * 1000
+        rtt = measure_response_time(domain, 80) 
         RTT.update({domain : rtt})
         if rtt is not None:
             print(f'The round-trip time is {rtt} ms (milliseconds).')
