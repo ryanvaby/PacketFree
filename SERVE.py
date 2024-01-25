@@ -4,6 +4,7 @@ import io
 import matplotlib
 import matplotlib.pyplot as plt 
 import time
+from PIL import Image
 
 from flask import Flask, render_template, request, redirect, url_for, flash
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -43,6 +44,10 @@ def main():
         
     return render_template("home.html")
 
+#SYN-ACK Info routing
+@app.route("/SYN-ACK")
+def syn_ack():
+    return render_template("syn_ack.html")
 # Core method to measure the RTT (round-trip time) of packets to different addresses
 # Inputs:
 #   target_ip : domain to send packet to
@@ -81,7 +86,7 @@ def analyze(target_domains):
     ax.bar(RTTX, RTTY)
 
         # Formatting the axis and labelling on the graph.
-    ax.set_ylabel('ROUND TRIP TIME')
+    ax.set_ylabel('ROUND TRIP TIME (MS)')
     ax.set_xlabel('\nPACKET DESTINATION')
     ax.set_title('RTT vs. PACKET DEST.')
     plt.xticks(rotation=90)
@@ -96,6 +101,7 @@ def analyze(target_domains):
     pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
     return pngImageB64String
 
+# Route that utilizes other functions to obtain the final output image data and send it to the html template
 @app.route('/output/<target_domains>')
 def output(target_domains):
     if target_domains.lower() == "us":

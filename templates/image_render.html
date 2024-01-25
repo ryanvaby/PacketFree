@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rendering Local Images Using Flask</title>
+    <title>Rendering Resulting Graph</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-<img src="{{ image }}"/></body>
+<img src="{{ image }}" class="center"/></body>
+<figure>
+    <figcaption class="center"">Graph of the RTT's to the selected set of domains</figcaption>
+</figure>
 </html>

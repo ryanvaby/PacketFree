@@ -1,0 +1,41 @@
+
+body {
+    background-color: lightblue;
+}
+  
+h1 {
+    text-align:justify;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+label{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+table {
+    width: 70%;
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2{
+    font-size: 30px;
+}
+
+figcaption{
+    font-size: 30px;
+    text-align: center;
+}

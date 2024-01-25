@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>What are SYN-ACK packets?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<h1>
+    PacketFree: SYN-ACK Packets
+</h1>
+
+<h2>
+    SYN-ACK Packets are an integral part of whats called the Transfer Control Protocol (TCP). The TCP system is one of the two main packet transfer protocols, the other being the User Datagram Protocol (UDP). TCP is used to render text and images, and is most commonly used. This is since  UDP, on the other hand
+</h2>
+<table border="1" class="center">
+    <tr> 
+       <th>TCP</th>
+       <th>UDP</th>
+     </tr>
+     <tr>
+       <td>Meticulate transfer protocol which ensures that all packets are sent and recieved with little to no packet loss</td>
+       <td>More lax protocol that prioritizes high output over precise and full packet transfer	</td>
+     </tr>
+     <tr> 
+       <td>Useful for applications that require consistent 0% packet loss	</td>
+       <td>Useful for live data streams that don't need 0% packet loss</td>
+    </tr>
+    <tr> 
+      <td>Web pages, large downloads, static images</td>
+      <td>Video games, media streaming, live streams</td>
+   </tr>
+</table>
+<!-- <img src="{{ image }}" class="center"/></body> -->
+</body>
+</html>

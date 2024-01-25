@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <head>
+        <title>PacketFree Transmission Control</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
     <h1>
-        This is PacketFree, our easy to use pseudo packet sniffer. By sending several "SYN-ACK" packets, which are essentially what a computer uses to connect to another server, we are able to discern the round trip time of a packet to that server. This information is useful for determing network congestion, and determining how well your web server can handle network traffic! To begin, please enter either "My own," if you'd like to test your own web domains, or "Yours," if you'd like to use our pre-loaded domains!
+        PacketFree
     </h1>
+    <h2>
+        This is PacketFree Transmission Control, our easy to use pseudo packet sniffer. By sending several <a href="http://127.0.0.1:1111/SYN-ACK">SYN-ACK</a> packets, which are essentially what a computer uses to connect to another server, we are able to discern the round trip time of a packet to that server. This information is useful for determing network congestion, and determining how well your web server can handle network traffic! To begin, please enter either "My own," if you'd like to test your own web domains, or "Yours," if you'd like to use our pre-loaded domains!
+    </h2>
     <p>Choose whether you'd like to use your own domains or ours:</p>
     <form method = "post">
         <input type="radio" name="user" id="Yours" value="Yours">
-        <label for="Yours">Yours</label><br>
+        <label for="Yours">Yours</label>
             <p style="margin-left: 40px">
             <input type="radio" name="area" id="US" value="US">
             <label for="US">US</label><br>
